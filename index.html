@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="transfer.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="list-group" id="list-group-left">
+            <p>列表 1</p>
+            <div class="selected-num">
+                <span>已选择 0/2 项</span>
+            </div>
+            <div class="search">
+                <div class="input-search">
+                    <input type="search" name="" id="left-search" placeholder="搜索内容">
+                </div>
+            </div>
+        </div>
+        <div class="transfer_button_container">
+            <button class="transfer_button" id="transfer_button_to_right" disabled>
+                &gt;
+            </button>
+            <button class="transfer_button" id="transfer_button_to_left" disabled>&lt;</button>
+        </div>
+        <div class="list-group" id="list-group-right">
+            <p>列表 2</p>
+            <div class="selected-num">
+                <span>已选择 0/2 项</span>
+            </div>
+            <div class="search">
+                <div class="input-search">
+                    <input type="search" name="" id="right-search" placeholder="搜索内容">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="transfer.js"></script>
+</body>
+
+</html>

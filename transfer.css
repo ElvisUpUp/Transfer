@@ -1,0 +1,82 @@
+.container {
+    width: 1000px;
+    margin: 50px auto;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    transition: .2s;
+}
+
+.list-group {
+    display: inline-block;
+    width: 400px;
+    margin: 50px auto;
+    vertical-align: middle;
+    height: 300px;
+}
+
+.selected-num {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.list-group p {
+    text-align: center;
+}
+
+.search {
+    text-align: center;
+}
+
+.search .input-search {
+    border: 1px solid grey;
+    font-size: 12px;
+    margin: 20px auto;
+    width: 200px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.list-group input[type='search'] {
+    border: none;
+    outline: none;
+    width: 170px;
+}
+
+.form-check-label,
+.form-check-input {
+    cursor: pointer;
+}
+
+.form-check-label:hover,
+.form-check-input:checked+label {
+    color: #409eff;
+}
+
+.transfer_button_container {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.transfer_button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    background-color: #409eff;
+    border: none;
+    display: block;
+    margin: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.transfer_button:disabled {
+    background: grey;
+    cursor: not-allowed;
+}
+
+button:focus {
+    outline: none;
+}
