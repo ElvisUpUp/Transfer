@@ -12,6 +12,11 @@
     margin: 50px auto;
     vertical-align: middle;
     height: 300px;
+    text-align: center;
+}
+
+.list-group-item {
+    text-align: left;
 }
 
 .selected-num {
@@ -21,7 +26,7 @@
 }
 
 .list-group p {
-    text-align: center;
+    display: inline-block;
 }
 
 .search {

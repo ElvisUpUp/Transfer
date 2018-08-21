@@ -20,7 +20,7 @@ var bindAll = function (selector, eventName, callback) {
 
 var checkFilter = {
     acceptNode: function (node) {
-        return node.checked == true ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP
+        return node.checked == true && node.className == 'form-check-input' ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP
     }
 }
 
@@ -101,14 +101,54 @@ var clearSearch = function (searchId) {
     searchInput.value = ''
 } 
 
+var selectAll = function (listId) {
+    var select = qs(`${listId} input:nth-of-type(1)`)[0]
+    var item = qs(`${listId} .list-group-item input`)
+    for (var e of item) {
+        if (select.checked == true) {
+            e.checked = true
+        } else {
+            e.checked = false
+        }
+    }
+}
+
+var checkSelectedAll = function (panel, listId) {
+    var select = qs(`${listId} input:nth-of-type(1)`)[0]
+    var item = qs(`${listId} .list-group-item input`)
+    var count = 0
+    for (var e of item) {
+        if (e.checked == false) {
+            select.checked = false
+        } else {
+            count++
+            if (count == item.length) {
+                select.checked = true
+            }
+        }
+    }
+}
+
 var bindEvent = function () {
     bindAll('.form-check-input', 'input', function (event) {
         updateButton()
         if (event.target.parentNode.parentNode.parentNode.parentNode.id == 'list-group-left') {
             updateSelectedNum(leftPanel)
+            checkSelectedAll(leftPanel, '#list-group-left')
         } else {
             updateSelectedNum(rightPanel)
+            checkSelectedAll(rightPanel, '#list-group-right')
         }
+    })
+    bindAll('#list-left-all', 'input', function () {
+        selectAll('#list-group-left')
+        updateButton()
+        updateSelectedNum(leftPanel)
+    })
+    bindAll('#list-right-all', 'input', function () {
+        selectAll('#list-group-right')
+        updateButton()
+        updateSelectedNum(rightPanel)
     })
     bindAll('#transfer_button_to_right', 'click', function (event) {
         clearSearch('#left-search')
